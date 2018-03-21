@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8"%>
-<%@ include file="enTetePage.html"%>
+<%@ include file="View/enTetePage.html"%>
 <nav id="navigation" class="col-full" role="navigation">
 	<ul id="main-nav" class="nav fl">
 		<li id="menu-item-290"
@@ -25,5 +25,5 @@
 		</div>
 	</div>
 </div>
-<%@ include file='piedDePage.html'%>
+<%@ include file='View/piedDePage.html'%>
 

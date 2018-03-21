@@ -1,5 +1,5 @@
 <%@ page pageEncoding="UTF-8"%>
-<%@ include file="enTetePage.html"%>
+<%@ include file="View/enTetePage.html"%>
 <%@ page import="commerce.catalogue.service.CatalogueManager"%>
 <%@ page import="commerce.catalogue.domaine.modele.Article"%>
 <%@ page import="commerce.gestion.Panier"%>
@@ -137,4 +137,4 @@
 <%
 	}
 %>
-<%@ include file="piedDePage.html"%>
+<%@ include file="View/piedDePage.html"%>

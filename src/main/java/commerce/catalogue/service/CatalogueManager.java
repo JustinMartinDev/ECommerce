@@ -103,7 +103,23 @@ public class CatalogueManager {
 		catch (RuntimeException e) {
 			if (session.getTransaction() != null)
 				session.getTransaction().rollback();
-			throw e; 
+			throw e;
+		}
+		return articles ;
+	}
+
+	public List getArticlesWithPriceBetween(String price1, String price2) throws Exception {
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession() ;
+		try {
+			session.beginTransaction();
+			Query query = session.createQuery("from commerce.catalogue.domaine.modele.Article WHERE prix BETWEEN'"+price1+"' AND + "+price1) ;
+			articles = query.list() ;
+			session.getTransaction().commit();
+		}
+		catch (RuntimeException e) {
+			if (session.getTransaction() != null)
+				session.getTransaction().rollback();
+			throw e;
 		}
 		return articles ;
 	}

@@ -31,6 +31,8 @@ import com.zeloon.deezer.domain.internal.search.SearchArtist;
 import amazon.apaIO.ApaiIO;
 import amazon.apaIO.configuration.GenericConfiguration;
 import amazon.apaIO.operations.Search;
+import commerce.catalogue.domaine.modele.Bijou;
+import commerce.catalogue.domaine.modele.Film;
 import commerce.catalogue.domaine.modele.Livre;
 import commerce.catalogue.domaine.modele.Musique;
 import commerce.catalogue.domaine.modele.Piste;
@@ -70,14 +72,16 @@ public class InitAmazon {
 		ApaiIO apaiIO = new ApaiIO();
 		apaiIO.setConfiguration(conf) ;
 		Search search = new Search();
-		search.setCategory("Music");
+		search.setCategory("All");
 		search.setResponseGroup("Offers,ItemAttributes,Images") ;
-		String keywords = "Ibrahim Maalouf" ;
+		String keywords = "Lord of the Rings" ;
 		search.setKeywords(keywords);
 
 		Livre livre ;
 		Musique musique ;
 		Piste piste ;
+		Film film;
+		Bijou bijou;
 		SAXBuilder builder = new SAXBuilder();
 		builder.setIgnoringElementContentWhitespace(true);
 		Document document ;
@@ -87,6 +91,16 @@ public class InitAmazon {
 		try {
 			document = builder.build(new StringReader(apaiIO.runOperation(search)));
 			racine = document.getRootElement() ;
+			
+			try {
+				FileWriter writer = new FileWriter("amazonResponse.xml");
+				XMLOutputter outputter = new XMLOutputter(Format.getPrettyFormat()) ;
+				outputter.output(racine, writer) ;
+			}
+			catch (IOException e) {
+				e.printStackTrace() ;
+			}
+
 			espaceNom = Namespace.getNamespace(racine.getNamespaceURI());
 
 			if (espaceNom != null && !racine.getName().equals("ItemSearchErrorResponse")) {
@@ -96,14 +110,14 @@ public class InitAmazon {
 				Element itemAttributes ;
 				Element image ;
 				int i = 0 ;
-				while (itemIterator.hasNext() && i != 5) {
+				while (itemIterator.hasNext() && i != 10) {
 					item = itemIterator.next() ;
 					itemAttributes = item.getChild("ItemAttributes",espaceNom);
 					image = item.getChild("LargeImage",espaceNom);
-					musique = new Musique();
 					try 
 					{
 						if (itemAttributes.getChild("ProductGroup",espaceNom).getText().equals("Music")) {
+							musique = new Musique();
 							musique.setRefArticle(item.getChild("ASIN",espaceNom).getText());
 							musique.setTitre(itemAttributes.getChild("Title",espaceNom).getText());
 							musique.setEAN(itemAttributes.getChild("EAN",espaceNom).getText());
@@ -149,6 +163,58 @@ public class InitAmazon {
 							catalogueManager.soumettreArticle(musique) ;
 							i ++ ;
 						}
+						else if(itemAttributes.getChild("ProductGroup", espaceNom).getText().equals("Book")) {
+							livre = new Livre();
+							livre.setRefArticle(item.getChild("ASIN", espaceNom).getText());
+							livre.setTitre(itemAttributes.getChild("Feature", espaceNom).getText());
+							livre.setAuteur(itemAttributes.getChild("Author", espaceNom).getText());
+							livre.setISBN(itemAttributes.getChild("ISBN", espaceNom).getText());
+							livre.setImage(image.getChild("URL",espaceNom).getText());
+							livre.setNbPages(Integer.parseInt(itemAttributes.getChild("NumberOfPages", espaceNom).getText()));
+							livre.setLangue(itemAttributes.getChild("Languages", espaceNom).getText());
+							livre.setDateDeParution(itemAttributes.getChild("PublicationDate", espaceNom).getText());
+							livre.setPrix(Integer.parseInt(item.getChild("OfferSummary", espaceNom).getChild("LowestNewPrice", espaceNom).getChild("Amount", espaceNom).getText()) / 100.0);
+							livre.setDisponibilite(1);
+							catalogueManager.soumettreArticle(livre);
+						}
+						else if(itemAttributes.getChild("ProductGroup", espaceNom).getText().equals("Movie") || itemAttributes.getChild("ProductGroup", espaceNom).getText().equals("DVD")) {
+							film = new Film();
+							film.setRefArticle(item.getChild("ASIN", espaceNom).getText());
+							film.setTitre(itemAttributes.getChild("Title", espaceNom).getText());
+							film.setImage(image.getChild("URL",espaceNom).getText());
+							film.setLangue(itemAttributes.getChild("Languages", espaceNom).getText());
+							film.setPrix(Integer.parseInt(item.getChild("OfferSummary", espaceNom).getChild("LowestNewPrice", espaceNom).getChild("Amount", espaceNom).getText()) / 100.0);
+							film.setDisponibilite(1);
+							film.setActeur(itemAttributes.getChild("Actor", espaceNom).getText());
+							film.setDirecteur(itemAttributes.getChild("Director", espaceNom).getText());
+							try {
+								film.setGenre(itemAttributes.getChild("Genre", espaceNom).getText());
+							} catch(NullPointerException e) {
+								film.setGenre("None");
+							}
+							film.setDateDeSortie(itemAttributes.getChild("ReleaseDate", espaceNom).getText());
+							film.setStudio(itemAttributes.getChild("Studio", espaceNom).getText());
+							film.setDuree(Integer.parseInt(itemAttributes.getChild("RunningTime", espaceNom).getText()));
+							catalogueManager.soumettreArticle(film);
+						}
+						else if(itemAttributes.getChild("ProductGroup", espaceNom).getText().equals("Jewelry")) {
+							bijou = new Bijou();
+							bijou.setRefArticle(item.getChild("ASIN", espaceNom).getText());
+							bijou.setTitre(itemAttributes.getChild("Title", espaceNom).getText());
+							bijou.setImage(image.getChild("URL",espaceNom).getText());
+							bijou.setLangue("None");
+							try {
+								bijou.setPrix(Integer.parseInt(item.getChild("OfferSummary", espaceNom).getChild("LowestNewPrice", espaceNom).getChild("Amount", espaceNom).getText()) / 100.0);
+							} catch(NullPointerException e) {
+								bijou.setPrix(0);
+							}
+							bijou.setDisponibilite(1);
+							bijou.setMarque(itemAttributes.getChild("Brand", espaceNom).getText());
+							bijou.setCategorie(itemAttributes.getChild("Department", espaceNom).getText());
+							bijou.setConstructeur(itemAttributes.getChild("Manufacturer", espaceNom).getText());
+							catalogueManager.soumettreArticle(bijou);
+						}
+						
 					}
 					catch (NullPointerException e) {
 						e.printStackTrace() ;

@@ -1,0 +1,5 @@
+commerce\catalogue\domaine\modele\Film.class
+commerce\gestion\AccountManager.class
+commerce\catalogue\domaine\modele\Account.class
+commerce\web\utilitaire\Password.class
+commerce\catalogue\domaine\modele\Bijou.class

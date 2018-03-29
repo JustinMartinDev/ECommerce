@@ -34,7 +34,7 @@ public class CatalogueManager {
 				session.getTransaction().rollback();
 			throw e; 
 		}
-		return (article) ;
+		return (article);
 	}
 	public void supprimerArticleParRef(String inRefArticle) throws Exception {
 		Article article ;
@@ -52,12 +52,12 @@ public class CatalogueManager {
 		}
 	}
 	public void soumettreArticle(Article inArticle) throws Exception {
-		Session session = HibernateUtil.getSessionFactory().getCurrentSession() ;
+		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 		try {
 			session.beginTransaction();
 			if (inArticle.getRefArticle() == null) {
 				inArticle.setRefArticle(new UniqueKeyGenerator().getUniqueId()) ;
-				session.save(inArticle) ;
+				session.save(inArticle);
 			}
 			else {
 				session.saveOrUpdate(inArticle) ;

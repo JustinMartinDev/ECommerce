@@ -1,0 +1,62 @@
+
+<section class="form-simple">
+
+    <!--Form with header-->
+    <div class="card">
+
+        <!--Header-->
+        <div class="header pt-3 grey lighten-2">
+
+            <div class="row d-flex justify-content-start">
+                <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Inscription</h3>
+            </div>
+
+        </div>
+        <!--Header-->
+
+        <div class="card-body mx-4 mt-4">
+
+            <form id="sendRegisterForm" data-loader="#registerSubmit">
+
+                <!--Body-->
+                <div class="md-form">
+                    <input type="text" id="Form-username" name="username" class="form-control" required>
+                    <label for="Form-username">Username</label>
+                </div>
+
+                <!--Body-->
+                <div class="md-form">
+                    <input type="text" id="Form-email4" name="email" class="form-control" required>
+                    <label for="Form-email4">Email</label>
+                </div>
+
+                <div class="md-form pb-3">
+                    <input type="password" id="Form-pass4" name="password" class="form-control" required>
+                    <label for="Form-pass4">Mot de passe</label>
+                </div>
+
+                <div class="md-form pb-3">
+                    <input type="password" id="Form-pass5" name="repassword" class="form-control" required>
+                    <label for="Form-pass5">Verification Mot de passe</label>
+                </div>
+
+
+                <div class="form-check my-4">
+                    <input class="form-check-input" name="checkbox" type="checkbox" id="defaultCheck12" required>
+                    <label class="form-check-label grey-text" for="defaultCheck12">Acceptez les<a href="./CGU.html" class="green-text font-weight-bold"> CGU</a></label>
+                </div>
+
+
+                <div class="text-center mb-4">
+                    <input type="submit" value="S'inscrire" class="btn btn-danger btn-block z-depth-2" id="registerSubmit"/>
+                </div>
+                <p class="font-small grey-text d-flex justify-content-center">Vous avez deja un compte? <a href="./loginPage.jsp" class="dark-grey-text font-weight-bold ml-1">Se connecter</a></p>
+
+            </form>
+
+        </div>
+
+    </div>
+    <!--/Form with header-->
+
+</section>

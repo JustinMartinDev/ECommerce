@@ -5,11 +5,12 @@ D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue\domaine\modele\Piste.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\UserId.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Related.java
+D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue\domaine\modele\Film.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Top.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\User.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue\domaine\modele\Article.java
-D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Playlist.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\PlaylistId.java
+D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Playlist.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\amazon\apaIO\configuration\ConfigurationInterface.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\EditorialItem.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Followers.java
@@ -21,6 +22,8 @@ D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Fans.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\search\SearchAlbum.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Artists.java
+D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\web\utilitaire\Password.java
+D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue\domaine\modele\Account.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\CommentId.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Playlists.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue\domaine\modele\Musique.java
@@ -29,6 +32,7 @@ D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Album.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Editorial.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\amazon\apaIO\configuration\Country.java
+D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\gestion\AccountManager.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Genres.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\ArtistId.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\search\SearchOrder.java
@@ -42,12 +46,13 @@ D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\search\Search.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\RadioItem.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\service\DeezerRestTemplate.java
-D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Object.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\AlbumId.java
-D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\search\SearchAutocomplete.java
+D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Object.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Charts.java
+D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\search\SearchAutocomplete.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\amazon\apaIO\ApaiIO.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\Offer.java
+D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue\domaine\modele\Bijou.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue\service\Loader.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\com\zeloon\deezer\domain\internal\TrackId.java
 D:\justin\data\DEV\ECom\eclipse-workspace\tpv35\src\main\java\commerce\catalogue\domaine\utilitaire\UniqueKeyGenerator.java

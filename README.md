@@ -4,6 +4,8 @@ This project is an Educative Project. It's a e-commerce website with Java as ser
 Hibernate allow to save the product, user account (and their data/historics).
 
 This website use Ajax to get data from API, it use Model Design Boostrap
+
+Let's see the wiki : [https://github.com/JustinMartinDev/ECommerce/wiki(]link)
 ## Authors
 
 * **Justin Martin** - *Initial work*

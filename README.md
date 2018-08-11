@@ -5,7 +5,7 @@ Hibernate allow to save the product, user account (and their data/historics).
 
 This website use Ajax to get data from API, it use Model Design Boostrap
 
-Let's see the wiki : [https://github.com/JustinMartinDev/ECommerce/wiki(]link)
+Let's see the wiki : [https://github.com/JustinMartinDev/ECommerce/wiki](link)
 ## Authors
 
 * **Justin Martin** - *Initial work*
